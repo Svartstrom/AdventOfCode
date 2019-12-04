@@ -161,6 +161,8 @@ def day4_1():
     print(result)
 
 
+def day5_1()
+
 if __name__ == "__main__":
     #print("Day1: ")
     #day1_2()
@@ -169,5 +171,7 @@ if __name__ == "__main__":
     #print("Day3: ")
     #day3_1()
     #day3_2()
+    #print("Day4: ")
+    #day4_1()
     print("Day4: ")
-    day4_1()
+    day5_1()

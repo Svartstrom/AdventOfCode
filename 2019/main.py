@@ -56,6 +56,31 @@ def run_code(bb):
             break
     return bb[0]
 
+
+def numberOfCombinations(start, end):
+    current = start
+    valid = 0
+    while current < end:
+        current += 1
+        temp = current
+        prev = 10
+        prev2 = 11
+        oneSame, allDec = 0, 1
+        while temp > 0:
+            i = temp % 10
+            temp = math.floor(temp / 10)
+            if prev == i and prev2 != i and (temp%10 != i):
+                oneSame = 1
+            if i > prev:
+                allDec = 0
+            prev2 = prev
+            prev = i
+
+        if oneSame and allDec:
+            valid += 1
+    return valid
+
+
 def day1_2():
     with open('day1_1_in.txt','r') as f:
         b= f.readlines()
@@ -128,11 +153,21 @@ def day3_2():
     print(f"minimum amount of steps is to {minS}, and is {minDist}")
 
 
+def day4_1():
+    start = 197487
+    end = 673251
+
+    result = numberOfCombinations(start, end)
+    print(result)
+
+
 if __name__ == "__main__":
-    print("Day1: ")
-    day1_2()
-    print("Day2: ")
-    day2_2()
-    print("Day3: ")
-    day3_1()
-    day3_2()
+    #print("Day1: ")
+    #day1_2()
+    #print("Day2: ")
+    #day2_2()
+    #print("Day3: ")
+    #day3_1()
+    #day3_2()
+    print("Day4: ")
+    day4_1()

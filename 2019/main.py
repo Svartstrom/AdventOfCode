@@ -44,7 +44,7 @@ def run_code(bb):
     index = 0
     while op != 99:
         op = bb[index]
-
+        print(op)
         if op == 1:
             bb[bb[index+3]] = bb[bb[index+1]]+ bb[bb[index+2]]
             index += 4
@@ -52,6 +52,14 @@ def run_code(bb):
         elif op == 2:
             bb[bb[index+3]] = bb[bb[index+1]] * bb[bb[index+2]]
             index += 4
+        elif op == 3:
+        	inp = int(input("input: "))
+        	print(f"print {inp} to {bb[index+1]}")
+        	bb[bb[index+1]-1] = inp
+        	index += 2
+        elif op == 4:
+        	print(bb[bb[index+1]-1])
+        	index += 2
         else:
             break
     return bb[0]
@@ -161,7 +169,17 @@ def day4_1():
     print(result)
 
 
-def day5_1()
+def day5_1():
+    with open('day5_1_in.txt','r') as f:
+        b = f.readlines()
+    for org in b:
+        org = org.split(',')
+        for i, c in enumerate(org):
+            org[i] = int(c)
+
+        ans_ = run_code(org)
+        print(ans_)
+
 
 if __name__ == "__main__":
     #print("Day1: ")
@@ -173,5 +191,5 @@ if __name__ == "__main__":
     #day3_2()
     #print("Day4: ")
     #day4_1()
-    print("Day4: ")
+    print("Day5: ")
     day5_1()

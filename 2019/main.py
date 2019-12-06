@@ -226,6 +226,13 @@ def day5_1():
 
 
 def day6_1():
+	names = []
+	map = {}
+	with open('day6_1_in_test.txt','r') as f:
+		b = f.readlines()
+	for a in b:
+		a = a.split(')')
+
 
 if __name__ == "__main__":
 	#print("Day1: ")

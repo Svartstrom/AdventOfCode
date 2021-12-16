@@ -76,7 +76,7 @@ def day3(filename):
     gamma_eps = calcGammaEpsilon(lines)
     most_prevalent = calcRecursivePrevalence(lines, 0, 'MOST')
     least_prevalent = calcRecursivePrevalence(lines, 0, 'LEAST')
-    print(most_prevalent,'###',least_prevalent)
+
     oxygen, CO2 = 0,0
     for _bin in most_prevalent:
         oxygen = addToBin(oxygen, _bin)

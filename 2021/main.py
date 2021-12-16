@@ -2,6 +2,7 @@ import day1.day1 as day1
 import day2.day2 as day2
 import day3.day3 as day3
 import day4.day4 as day4
+import day5.day5 as day5
 
 def main():
     i, i2 = day1.day1('day1/in1.txt')
@@ -22,5 +23,10 @@ def main():
     i, i2 = day4.day4('day4/in1.txt')
     print(f'Day 4.1: {i}')
     print(f'Day 4.2: {i2}')
+
+    i, i2 = day5.day5('day5/test.txt')
+    #i, i2 = day5.day5('day5/in1.txt')
+    print(f'Day 5.1: {i}')
+    print(f'Day 5.2: {i2}')
 if __name__ == '__main__':
     main()

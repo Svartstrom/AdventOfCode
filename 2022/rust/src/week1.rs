@@ -46,7 +46,6 @@ pub fn day2()
     let mut my_point = 0;
     for row in contents.split("\n") {
         let vec: Vec<&str> = row.split(" ").collect();
-        //let (other, me) = row.split(" ").unwrap();
         match vec[0] {
             "A" => { // Rock
                 match vec[1] {
@@ -76,4 +75,42 @@ pub fn day2()
         }
     } 
     println!("my_point: {}", my_point);
+}
+
+
+pub fn day3()
+{
+    println!("\nDay 3: ");
+    let contents = fs::read_to_string("./src/input/day3.txt")
+        .expect("Should have been able to read the file");
+    let mut j = Vec::new();//first[0];
+    for row in contents.split("\n") {
+        let vec: Vec<&str> = row.split("").collect();
+        let length = vec.len();
+        println!("{length}");
+        let mut first = Vec::new();
+        let mut second = Vec::new();
+        for (i, letter) in vec.iter().enumerate() {
+            if i < length/2 {
+                first.push(letter);
+            } else {
+                second.push(letter);
+            }
+        }
+        
+        for l in first {
+            println!("{l}");
+            if second.iter().any(|&i| i==l) {
+                j.push(l);
+                println!("{l}");
+                println!("l");
+                //break;
+            }
+            
+        }
+        for k in j{
+            println!("{k}");
+        }
+        
+    }
 }

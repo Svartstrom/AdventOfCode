@@ -5,9 +5,9 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                sh 'python3 main.py'
-        	pytest
-	    }
+                //sh 'python3 main.py'
+            	pytest
+	        }
         }
     }
 }

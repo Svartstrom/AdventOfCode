@@ -6,7 +6,8 @@ pipeline {
             steps {
                 echo 'Hello World'
                 //sh 'python3 main.py'
-            	sh 'pytest'
+                sh 'ls -a'
+                sh 'pytest 2023/'
 	        }
         }
     }

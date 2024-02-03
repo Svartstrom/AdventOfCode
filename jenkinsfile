@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
                 //sh 'python3 main.py'
                 sh 'ls -a'
-                sh 'pytest 2023/day_1/'
+                sh 'pytest 2023/'
 	        }
         }
     }

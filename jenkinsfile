@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
                 //sh 'python3 main.py'
                 sh 'ls -a'
-                sh 'pytest 2023/ --junitxml=.'
+                sh 'pytest 2023/ --junitxml=result.xml'
 	        }
         }
     }

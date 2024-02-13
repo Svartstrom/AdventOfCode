@@ -1,4 +1,3 @@
-
 def day1(inp):
     total = 0
     for line in inp:
@@ -21,7 +20,6 @@ def day1(inp):
 
 
 def day2(inp):
-    #total = 0
     scratches = [1] * len(inp)
     for i, line in enumerate(inp):
         winning = []
@@ -32,21 +30,22 @@ def day2(inp):
         for w in winning_str:
             winning.append(int(w))
         for _ in range(scratches[i]):
-            j=0
+            j = 0
             for m in mine_str:
                 if int(m) in winning:
                     j += 1
-                    scratches[i+j] += 1
+                    scratches[i + j] += 1
     return sum(scratches)
 
+
 def main():
-    with open("day_4/in1.txt","r") as f:
+    with open("day_4/in1.txt", "r") as f:
         d1 = f.readlines()
     print(day1(d1))
-    with open("day_4/in1.txt","r") as f:
+    with open("day_4/in1.txt", "r") as f:
         d2 = f.readlines()
     print(day2(d2))
 
+
 if __name__ == "__main__":
     main()
-

@@ -9,7 +9,10 @@
 #
 # longList.sort() #about 52 - 6.1 = 46 secs
 # longList2.sort(key = lambda c: c.count) #about 9 - 6.1 = 3 secs
+from day_2 import main as m
+
 from enum import Enum
+from abc import ABCMeta
 
 
 class strength(Enum):
@@ -177,7 +180,6 @@ def day2(inp):
     total = 0
     for i, hand in enumerate(hands):
         total += hand.bid * (i + 1)
-        print(hand)
     return total
 
 

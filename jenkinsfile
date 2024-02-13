@@ -14,15 +14,15 @@ pipeline {
         //}
         when {
             expression {currentBuild.result != 'UNSTABLE'}
-        } steps {
-        stage('Build') {
-            steps {
-                echo 'Hello from builder'
-                //sh 'python3 main.py'
-                sh 'ls -a'
-                //sh 'pytest 2023/ --junitxml=result.xml'
-	        }
-        }
+            } steps {
+            stage('Build') {
+                steps {
+                    echo 'Hello from builder'
+                    //sh 'python3 main.py'
+                    sh 'ls -a'
+                    //sh 'pytest 2023/ --junitxml=result.xml'
+                }
+            }
         }
     }
 }

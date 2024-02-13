@@ -2,12 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Test') {
             steps {
-                echo 'Hello World'
+                try {
+                    echo 'Hello World'
+                    //sh 'python3 main.py'
+                    sh 'ls -a'
+                    sh 'pytest 2023/ --junitxml=result.xml'
+                } catch(err) {
+                    step([$class: 'JUnitResultArchiver', testResults: '**/result.xml'])
+                    throw err
+                }
+	        }
+        }
+        stage('Build') {
+            steps {
+                echo 'Hello from builder'
                 //sh 'python3 main.py'
                 sh 'ls -a'
-                sh 'pytest 2023/ --junitxml=result.xml'
+                //sh 'pytest 2023/ --junitxml=result.xml'
 	        }
         }
     }

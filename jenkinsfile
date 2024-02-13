@@ -4,27 +4,44 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-script {
+                script {
                     echo 'Hello World'
                     //sh 'python3 main.py'
                     //sh 'ls -a'
                     //sh 'pytest 2023/ --junitxml=result.xml'
                     def output = sh(returnStatus: true, script: 'pytest 2023/ --junitxml=result.xml')
                     echo "Output: ${output}"
-}
+                }
 	        }
         }
-        //when {
-            //expression {currentBuild.result != 'UNSTABLE'}
-            //} steps {   
-            stage('Build') {
-                steps {
-                    echo 'Hello from builder'
-                    //sh 'python3 main.py'
-                    sh 'ls -a'
-                    //sh 'pytest 2023/ --junitxml=result.xml'
+        stage('Build') {
+            when {
+                expression {
+                    return !output
                 }
             }
-        //}
+            steps {
+                echo 'Hello from builder'
+                //sh 'python3 main.py'
+                sh 'ls -a'
+                //sh 'pytest 2023/ --junitxml=result.xml'
+            }
+        }
+    }
+}
+
+
+
+stages {
+    stage('Deploy') {
+        when { 
+            expression {
+                return Deploy
+            }
+        }
+        steps {
+            echo "Hello, bitwiseman!" // Step executes only when Deploy is true
+
+        }
     }
 }

@@ -12,9 +12,9 @@ pipeline {
 
 	        }
         //}
-        when {
-            expression {currentBuild.result != 'UNSTABLE'}
-            } steps { 
+        //when {
+            //expression {currentBuild.result != 'UNSTABLE'}
+            //} steps {   
             stage('Build') {
                 steps {
                     echo 'Hello from builder'
@@ -23,6 +23,6 @@ pipeline {
                     //sh 'pytest 2023/ --junitxml=result.xml'
                 }
             }
-        }
+        //}
     }
 }

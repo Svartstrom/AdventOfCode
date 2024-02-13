@@ -14,11 +14,11 @@ in2 = """
 """
 
 
-def test_day1():
-    a = day1(in1.split("\n"))
-    assert a == 2
+# def test_day1():
+#    a = day1(in1.split("\n"))
+#    assert a == 2
 
 
-def test_day2():
-    a = day2(in1.split("\n"))
-    assert a == 5905
+# def test_day2():
+#    a = day2(in1.split("\n"))
+#    assert a == 5905

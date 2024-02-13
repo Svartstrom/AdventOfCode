@@ -184,6 +184,7 @@ def day2(inp):
 
 
 def main():
+    # here?
     with open("day_7/in1.txt", "r") as f:
         d1 = f.readlines()
     print(day1(d1))

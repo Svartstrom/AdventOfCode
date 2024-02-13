@@ -14,7 +14,7 @@ pipeline {
         //}
         when {
             expression {currentBuild.result != 'UNSTABLE'}
-            } steps {
+            } steps { 
             stage('Build') {
                 steps {
                     echo 'Hello from builder'

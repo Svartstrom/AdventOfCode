@@ -11,7 +11,7 @@ pipeline {
                     sh 'pytest 2023/ --junitxml=result.xml'
 
 	        }
-        //}
+        }
         //when {
             //expression {currentBuild.result != 'UNSTABLE'}
             //} steps {   

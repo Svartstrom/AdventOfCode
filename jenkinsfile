@@ -9,7 +9,7 @@ script {
                     //sh 'python3 main.py'
                     //sh 'ls -a'
                     //sh 'pytest 2023/ --junitxml=result.xml'
-                    def output = sh(returnStdout: true, script: 'pytest 2023/ --junitxml=result.xml')
+                    def output = sh(returnStatus: true, script: 'pytest 2023/ --junitxml=result.xml')
                     echo "Output: ${output}"
 }
 	        }
